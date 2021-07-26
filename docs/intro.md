@@ -1,35 +1,66 @@
 ---
-sidebar_position: 1
+sidebar_position: 0
 ---
+# Getting started
 
-# Tutorial Intro
+The codebase is built upon several projects below:
 
-Let's discover **Docusaurus in less than 5 minutes**.
+- React Native
+- Firebase
+- React Navigation
+- UI Kitten
+- TypeScript
 
-## Getting Started
+## Installation
 
-Get started by **creating a new site**.
-
-Or **try Docusaurus immediately** with **[new.docusaurus.io](https://new.docusaurus.io)**.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**:
-
-```shell
-npx @docusaurus/init@latest init my-website classic
+- In terminal:
+  
+```console
+git clone https://github.com/App-Takeoff/takeoff-web.git
+npm i -g expo-cli
 ```
 
-## Start your site
+- Install all dependencies:
 
-Run the development server:
-
-```shell
-cd my-website
-
-npx docusaurus start
+```console
+cd ./takeoff-web
+yarn
 ```
 
-Your site starts at `http://localhost:3000`.
+- `pod-install` to install ios pods
 
-Open `docs/intro.md` and edit some lines: the site **reloads automatically** and display your changes.
+```console
+cd ios
+npx pod-install
+```
+
+- Make sure `react-native.config.js` looks like this:
+
+```js
+module.exports = {
+  project: {
+    ios: {},
+    android: {},
+  },
+  assets: ["./src/assets/fonts"],
+}
+```
+
+- Run `react-native-link` to link ONLY `assets`
+- Known bug when setting up `react-native-vector-icons`:
+  - After installing `react-native-vector-icons`, follow [this official docs](https://github.com/oblador/react-native-vector-icons#option-manually)
+  - @see [this og solution](https://github.com/react-navigation/react-navigation/issues/6267#issuecomment-528883756)
+
+- Ask @Khoi Tran to provide suitable `.env` file. Add it to the root folder
+- To run on web:
+
+`yarn web`
+
+## Running Storybook (Soon)
+
+From the command line in your generated app's root directory, enter `yarn run storybook`
+This starts up the storybook server.
+
+In `app/app.tsx`, change `SHOW_STORYBOOK` to `true` and reload the app.
+
+For Visual Studio Code users, there is a handy extension that makes it easy to load Storybook use cases into a running emulator via tapping on items in the editor sidebar. Install the `React Native Storybook` extension by `Orta`, hit `cmd + shift + P` and select "Reconnect Storybook to VSCode". Expand the STORYBOOK section in the sidebar to see all use cases for components that have `.story.tsx` files in their directories.

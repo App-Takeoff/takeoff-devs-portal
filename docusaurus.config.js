@@ -3,8 +3,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: "App Takeoff • Docs",
-  tagline: "Build your team workplace, insanely fast",
+  title: "App Takeoff Developers",
+  tagline: "Bring the best experience for our crew",
   url: "https://app.apptakeoff.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -14,20 +14,18 @@ module.exports = {
   projectName: "takeoff-docs", // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: "Docs • App Takeoff",
+      title: "Devs • App Takeoff",
       logo: {
-        alt: "Docs • App Takeoff",
-        src: "img/logo.svg",
+        alt: "Devs • App Takeoff",
+        src: "img/docusaurus.png",
       },
       items: [
         {
           type: "doc",
           docId: "intro",
           position: "left",
-          label: "Intro",
+          label: "Docs",
         },
-        { to: "/blog", label: "FAQs", position: "left" },
-        { to: "/blog", label: "Developers", position: "left" },
         { to: "/blog", label: "Blog", position: "left" },
         {
           href: "https://app.apptakeoff.com",
@@ -43,16 +41,8 @@ module.exports = {
           title: "Docs",
           items: [
             {
-              label: "Intro",
-              to: "/docs/intro",
-            },
-            {
-              label: "FAQs",
-              to: "/docs/faqs",
-            },
-            {
               label: "Developers",
-              to: "/docs/devs",
+              to: "/docs/intro",
             },
           ],
         },
